@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col">
+    <h1>All Our Flats</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <p>All <%= @flats.length %> flat<%= 's' if @flats.length > 1 %>.<p>
+  </div>
+</div>
+
+<div class="row">
+  <% @flats.each do |flat| %>
+    <div class="col-4">
+      <div class="flat-card shadow-sm">
+        <div class="flat-information details bg-light p-3 border-bottom">
+          <div class="flat-name fs-4 fw-bolder">
+            <p><%= flat.name %></p>
+          </div>
+          <div class="flat-address">
+            <p><%= flat.address %></p>
+          </div>
+          <div class="flat-price-guest">
+            <p><i class="fa-solid fa-people-line"></i><%= flat.number_of_guests %> - <i class="fa-solid fa-euro-sign"></i><%= flat.price_per_night %></p>
+          </div>
+        </div>
+        <div class="d-flex flat-card-actions p-3">
+          <p class="m-0"><%= link_to 'More Info', flat_path(flat), class: "me-2" %></p>
+          <p class="m-0"><%= link_to 'Edit', edit_flat_path(flat), class: "text-warning me-2" %></p>
+          <p class="m-0"><%= link_to "Remove",
+              flat_path(flat),
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-danger"
+          %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

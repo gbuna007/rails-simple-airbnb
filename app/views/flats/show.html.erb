@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-8">
+    <div class="flat-name-address mb-4 bg-light rounded p-3 shadow-sm">
+      <h1><%= @flat.name %></h1>
+      <p class="fs-4 fw-light"><%= @flat.address %></p>
+    </div>
+    <div class="flat-desc-map mb-4 bg-light rounded p-3 shadow-sm">
+      <h2>A bit more about this flat..</h2>
+      <%= @flat.description %>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="flat-booking mb-4 bg-light rounded p-3 shadow-sm">
+      <h2>Book this flat!</h2>
+      <div class="input-group input-group-sm mb-4">
+        <span class="input-group-text" id="inputGroup-sizing-sm">From:</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="12/10/2022">
+      </div>
+      <div class="input-group input-group-sm mb-4">
+        <span class="input-group-text" id="inputGroup-sizing-sm">To:</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="18/10/2022">
+      </div>
+      <button type="button" class="btn btn-success w-100">Book Now</button>
+    </div>
+    <div class="flat-details mb-4 bg-light rounded p-3 shadow-sm">
+      <h2>Details</h2>
+      <p><%= @flat.number_of_guests %> people - <%= @flat.price_per_night %>€</p>
+    </div>
+    <div class="flat-share d-flex justify-content-between bg-light rounded p-3 shadow-sm">
+      <p>Share</p>
+      <div class="d-flex share-icons">
+        <i class="fa-brands fa-square-facebook me-1"></i>
+        <i class="fa-brands fa-square-twitter me-1"></i>
+        <i class="fa-brands fa-square-pinterest me-1"></i>
+        <i class="fa-solid fa-square-envelope"></i>
+      </div>
+    </div>
+
+  </div>
+</div>
