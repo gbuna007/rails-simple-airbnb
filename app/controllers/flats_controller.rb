@@ -53,7 +53,4 @@ class FlatsController < ApplicationController
     params.require(:flat).permit(:name, :address, :description, :number_of_guests, :price_per_night)
   end
 
-  def search_params
-    params.require(:search).permit(:name)
-  end
 end
